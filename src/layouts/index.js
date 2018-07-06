@@ -2,11 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
-import './index.css'
+import NavBar from '../components/nav-bar'
+
+import style from './index.module.css'
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div className={style.container}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -14,7 +15,7 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header siteTitle={data.site.siteMetadata.title} />
+    <NavBar siteTitle={data.site.siteMetadata.title} />
     <div
       style={{
         margin: '0 auto',

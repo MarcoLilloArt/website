@@ -1,0 +1,11 @@
+.link {
+    background-color: rgba(50, 50, 50, 0.2);
+    text-decoration: none;
+    padding: 1rem 3rem;
+    color: black;
+    transition: 0.4s;
+}
+
+.link:hover {
+    color: #902b23;
+}
