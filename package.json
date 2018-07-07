@@ -9,7 +9,9 @@
     "gatsby-plugin-react-helmet": "^2.0.10",
     "gatsby-plugin-typography": "^1.7.19",
     "react-helmet": "^5.2.0",
+    "react-slick": "^0.23.1",
     "react-typography": "^0.16.13",
+    "slick-carousel": "^1.8.1",
     "typography": "^0.16.17"
   },
   "keywords": [

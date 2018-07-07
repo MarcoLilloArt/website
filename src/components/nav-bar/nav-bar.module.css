@@ -1,15 +1,19 @@
 .container {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.9);
     height: 4rem;
     display: flex;
     justify-content: center;
 }
 
 .innerContainer {
-    background-color: rgba(155, 155, 155, 0.5);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     max-width: 80vw;
+}
+
+.navGroup {
+    display: flex;
+    justify-content: flex-start;
 }

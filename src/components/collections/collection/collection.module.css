@@ -1,0 +1,27 @@
+.container {
+    margin-bottom: 4rem;
+}
+
+.carousel {
+    margin-top: 1rem;
+    background-color: rgba(1, 1, 1, .3);
+}
+
+.carousel:global.slick-slider > button.slick-arrow.slick-prev {
+    left: -4rem !important;
+}
+
+.carousel:global.slick-slider > button.slick-arrow.slick-next {
+    right: -4rem !important;
+}
+
+.slideItem {
+    display: flex !important;
+    justify-content: center;
+    align-content: center;
+}
+
+.image {
+    margin: 0;
+    height: 230px;
+}
