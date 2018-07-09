@@ -1,3 +1,5 @@
 .container {
     background-image: url('../static/background.png');
+    background-position: top;
+    background-size: contain;
 }
