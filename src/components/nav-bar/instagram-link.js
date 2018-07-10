@@ -1,12 +1,13 @@
 import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import style from './instagram-link.module.css'
 
 const InstagramLink = () =>
     <div className={style.logo}>
-        <a href="http://instagram.com">
+        <OutboundLink href="http://instagram.com">
             <img className={style.image} src={require('../../static/insta-logo.png')} />
-        </a>
+        </OutboundLink>
     </div>
 
 export default InstagramLink

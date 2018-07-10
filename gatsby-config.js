@@ -19,12 +19,12 @@ module.exports = {
         head: true,
       },
     },
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'img',
-    //     path: '${__dirname}/src/img/'
-    //   }
-    // },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'img',
+        path: 'src/static/'
+      }
+    },
   ],
 }

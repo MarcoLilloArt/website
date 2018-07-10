@@ -1,12 +1,18 @@
 import React from 'react'
 import Slider from 'react-slick'
+import Image from 'gatsby-image'
 
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import style from './collection.module.css'
 
-const Collection = ({ name }) =>
+const BigImage = ({ image }) =>
+    <div className={style.bigImageContainer}>
+        <Image className={style.bigImage} sizes={image.sizes} />
+    </div>
+
+const Collection = ({ name, images, showOverlay }) =>
     <div className={style.container}>
         <div className={style.title} children={name} />
         <Slider
@@ -15,15 +21,18 @@ const Collection = ({ name }) =>
             className={style.carousel}
         >
             {
-                [1,2,3,4,5].map((i) =>
-                    <div key={i} className={style.slideItem}>
-                        <img key={i} className={style.image} src="http://via.placeholder.com/150x150" />
+                images.map((image, index) =>
+                    <div key={index} className={style.slideItem}>
+                        <Image className={style.image} sizes={image.sizes} />
+                        <div onClick={() => showOverlay(BigImage, { image })} className={style.imageOverlay} />
                     </div>
                 )
             }
         </Slider>
     </div>
 
-// http://via.placeholder.com/350x150
+Collection.defaultProps = {
+    images: [],
+}
 
 export default Collection

@@ -4,7 +4,6 @@
 
 .carousel {
     margin-top: 1rem;
-    background-color: rgba(1, 1, 1, .3);
 }
 
 .carousel:global.slick-slider > button.slick-arrow.slick-prev {
@@ -20,9 +19,32 @@
     justify-content: center;
     align-content: center;
     outline: none;
+    position: relative;
 }
 
 .image {
     margin: 0;
-    height: 230px;
+    width: 17vw;
+    display: block;
+}
+
+.imageOverlay {
+    width: 17vw;
+    height: 100%;
+    position: absolute;
+    transition: .3s;
+}
+
+.imageOverlay:hover {
+    background-color: rgba(1, 1, 1, .2);
+    cursor: pointer;
+}
+
+.bigImageContainer {
+    display: flex;
+    align-items: center;
+}
+
+.bigImage {
+    width: 50vw;
 }

@@ -1,15 +1,15 @@
 import React from 'react'
 import ScrollableAnchor from 'react-scrollable-anchor'
 
-import Collections from '../components/collections'
+import CollectionsWithOverlay from '../components/collections/with-overlay'
 import style from './index.module.css'
 import MarcoLogo from '../components/marco-logo';
 import Exhibition from '../components/exhibition'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) =>
   <div>
     <div className={style.introContainer}>
-      <MarcoLogo />
+      <MarcoLogo image={data.marcoLogo.edges[0].node} />
       <p className={style.introText}>from nowhere with love</p>
     </div>
     <div className={style.frontContainer}>
@@ -18,7 +18,11 @@ const IndexPage = () => (
           <div>
             <br/>
             <br/>
-            <Collections />
+            <CollectionsWithOverlay
+              triangleNodes={data.triangles.edges}
+              dreamNodes={data.dreamWithinADream.edges}
+              bitsNodes={data.bitsAndPieces.edges}
+            />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="history">
@@ -45,6 +49,73 @@ const IndexPage = () => (
       </div>
     </div>
   </div>
-)
+
+export const query = graphql`
+query TrianglesCollectionImages {
+  marcoLogo: allImageSharp(
+    filter: {
+      id: {
+        eq: "src/static/marco.png absPath of file >> ImageSharp"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  triangles: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/triangles/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  dreamWithinADream: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/dream-within-a-dream/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  bitsAndPieces: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/bits-n-pieces/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+}
+`
 
 export default IndexPage
