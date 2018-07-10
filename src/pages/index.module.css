@@ -3,11 +3,11 @@
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
+    margin-top: 2rem;
 }
 
 .introText {
     margin: 0 10rem;
-    margin-bottom: 9rem;
 }
 
 .frontContainer {

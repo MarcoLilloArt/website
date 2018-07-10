@@ -2,6 +2,10 @@
     position: relative;
 }
 
+.background {
+    object-fit: cover;
+}
+
 .foreground {
     position: absolute;
     top: 0;

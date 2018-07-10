@@ -16,9 +16,9 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'marco, lillo, art' },
       ]}
     />
+    <NavBar siteTitle={data.siteMeta.siteMetadata.title} />
     <Image className={style.background} sizes={data.background.edges[0].node.sizes} />
     <div className={style.foreground}>
-      <NavBar siteTitle={data.siteMeta.siteMetadata.title} />
       {children()}
     </div>
   </div>
