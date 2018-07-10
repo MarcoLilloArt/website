@@ -16,8 +16,6 @@ const IndexPage = ({ data }) =>
       <div className={style.frontInnerContainer}>
         <ScrollableAnchor id="collections">
           <div>
-            <br/>
-            <br/>
             <CollectionsWithOverlay
               triangleNodes={data.triangles.edges}
               dreamNodes={data.dreamWithinADream.edges}
