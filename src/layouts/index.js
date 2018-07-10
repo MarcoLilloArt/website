@@ -15,6 +15,9 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Marco Lillo Art Exhibition' },
         { name: 'keywords', content: 'marco, lillo, art' },
       ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image/png', href: require('../static/favicon.png') }
+      ]}
     />
     <NavBar siteTitle={data.siteMeta.siteMetadata.title} />
     <Image className={style.background} sizes={data.background.edges[0].node.sizes} />
