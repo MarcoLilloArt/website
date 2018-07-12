@@ -8,21 +8,27 @@ import Exhibition from '../components/exhibition'
 
 const IndexPage = ({ data }) =>
   <div>
-    <div className={style.introContainer}>
-      <MarcoLogo image={data.marcoLogo.edges[0].node} />
-      <p className={style.introText}>from nowhere with love</p>
+    <div className={style.imageContainer}>
+      <div className={style.introContainer}>
+        <MarcoLogo image={data.marcoLogo.edges[0].node} />
+        <p className={style.introText}>from nowhere with love</p>
+      </div>
+      <div className={style.frontContainer}>
+        <div className={style.frontInnerContainer}>
+          <ScrollableAnchor id="collections">
+            <div>
+              <CollectionsWithOverlay
+                triangleNodes={data.triangles.edges}
+                dreamNodes={data.dreamWithinADream.edges}
+                bitsNodes={data.bitsAndPieces.edges}
+              />
+            </div>
+          </ScrollableAnchor>
+        </div>
+      </div>
     </div>
-    <div className={style.frontContainer}>
-      <div className={style.frontInnerContainer}>
-        <ScrollableAnchor id="collections">
-          <div>
-            <CollectionsWithOverlay
-              triangleNodes={data.triangles.edges}
-              dreamNodes={data.dreamWithinADream.edges}
-              bitsNodes={data.bitsAndPieces.edges}
-            />
-          </div>
-        </ScrollableAnchor>
+    <div className={style.textContainer}>
+      <div className={style.textInnerContainer}>
         <ScrollableAnchor id="history">
           <div className={style.contentGroup}>
             <h3>history</h3>

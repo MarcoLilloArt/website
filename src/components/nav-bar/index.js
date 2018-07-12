@@ -6,15 +6,11 @@ import style from './nav-bar.module.css'
 
 const NavBar = () => (
   <div className={style.container}>
-    <div className={style.innerContainer}>
-      <div className={style.navGroup}>
-        <NavLink to="#collections" title='collection' />
-        <NavLink to="#history" title='history' />
-        <NavLink to="#exhibition" title='exhibition' />
-        <NavLink to="#contact" title='contact' />
-      </div>
-      <InstagramLink />
-    </div>
+    <NavLink to="#collections" title='collection' />
+    <NavLink to="#history" title='history' />
+    <NavLink to="#exhibition" title='exhibition' />
+    <NavLink to="#contact" title='contact' />
+    <InstagramLink className={style.instagram} />
   </div>
 )
 

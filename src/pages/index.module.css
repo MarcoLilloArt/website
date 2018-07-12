@@ -1,13 +1,20 @@
+.imageContainer {
+    background-image: url('../static/background.png');
+    background-size: cover;
+}
+
 .introContainer {
     display: flex;
     align-items: center;
     justify-content: space-around;
     font-size: 1.5rem;
-    margin-top: 2rem;
+    padding-top: 2rem;
+    flex-wrap: wrap-reverse;
+    padding-bottom: 2rem;
 }
 
 .introText {
-    margin: 0 10rem;
+    margin-top: 2rem;
     margin-bottom: 6rem;
 }
 
@@ -22,13 +29,28 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 4rem 0;
     background-color: rgba(255, 255, 255, 0.85);
     padding: 2rem;
     display: flex;
     justify-content: flex-start;
 }
 
+.textContainer {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.textInnerContainer {
+    max-width: 78vw;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 2rem;
+}
+
 .contentGroup {
-    padding-top: 7rem;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
 }

@@ -2,10 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 }
 
 .image {
-    width: 50px;
+    width: 4rem;
     margin-bottom: 0;
 }

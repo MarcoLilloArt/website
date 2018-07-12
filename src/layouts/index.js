@@ -20,10 +20,13 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <NavBar siteTitle={data.siteMeta.siteMetadata.title} />
-    <Image className={style.background} sizes={data.background.edges[0].node.sizes} />
-    <div className={style.foreground}>
+    {/* <div className={style.background}>
+      <Image sizes={data.background.edges[0].node.sizes} />
+      <Image sizes={data.background.edges[0].node.sizes} />
+    </div> */}
+    {/* <div className={style.foreground}> */}
       {children()}
-    </div>
+    {/* </div> */}
   </div>
 )
 
