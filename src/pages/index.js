@@ -21,6 +21,10 @@ const IndexPage = ({ data }) =>
                 triangleNodes={data.triangles.edges}
                 dreamNodes={data.dreamWithinADream.edges}
                 bitsNodes={data.bitsAndPieces.edges}
+                otherNodes={data.other.edges}
+                toolsNodes={data.tools.edges}
+                turbulenceNodes={data.turbulence.edges}
+                fromNowhereNodes={data.fromNowhereWithLove.edges}
               />
             </div>
           </ScrollableAnchor>
@@ -107,7 +111,71 @@ query TrianglesCollectionImages {
   bitsAndPieces: allImageSharp(
     filter: {
       id: {
-        regex: "/collections\/bits-n-pieces/"
+        regex: "/collections\/bits-and-pieces/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  fromNowhereWithLove: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/from-nowhere-with-love/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  other: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/other/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  tools: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/tools/"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+      }
+    }
+  }
+
+  turbulence: allImageSharp(
+    filter: {
+      id: {
+        regex: "/collections\/turbulence/"
       }
     }
   ) {

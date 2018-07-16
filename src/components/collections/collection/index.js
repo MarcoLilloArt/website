@@ -12,24 +12,33 @@ const BigImage = ({ image }) =>
         <Image className={style.bigImage} sizes={image.sizes} />
     </div>
 
-const Collection = ({ name, images, showOverlay }) =>
-    <div className={style.container}>
-        <div className={style.title} children={name} />
-        <Slider
-            slidesToShow={4}
-            slidesToScroll={4}
-            className={style.carousel}
-        >
-            {
-                images.map((image, index) =>
-                    <div key={index} className={style.slideItem}>
-                        <Image className={style.image} sizes={image.sizes} />
-                        <div onClick={() => showOverlay(BigImage, { image })} className={style.imageOverlay} />
-                    </div>
-                )
-            }
-        </Slider>
-    </div>
+const Collection = ({ name, images, showOverlay }) => {
+    let slidesToShow = 4
+
+    if (images.length < slidesToShow) {
+        slidesToShow = images.length
+    }
+
+    return (
+        <div className={style.container}>
+            <div className={style.title} children={name} />
+            <Slider
+                slidesToShow={slidesToShow}
+                slidesToScroll={slidesToShow}
+                className={style.carousel}
+            >
+                {
+                    images.map((image, index) =>
+                        <div key={index} className={style.slideItem}>
+                            <Image className={style.image} sizes={image.sizes} />
+                            <div onClick={() => showOverlay(BigImage, { image })} className={style.imageOverlay} />
+                        </div>
+                    )
+                }
+            </Slider>
+        </div>
+    )
+}
 
 Collection.defaultProps = {
     images: [],

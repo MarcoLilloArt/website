@@ -9,6 +9,10 @@ const Collections = ({
     dreamNodes,
     bitsNodes,
     showOverlay,
+    otherNodes,
+    toolsNodes,
+    fromNowhereNodes,
+    turbulenceNodes,
 }) =>
     <div className={style.container}>
         <Collection
@@ -24,6 +28,26 @@ const Collections = ({
         <Collection
             name='triangles'
             images={bitsNodes.map(n => n.node)}
+            showOverlay={showOverlay}
+        />
+        <Collection
+            name='other'
+            images={otherNodes.map(n => n.node)}
+            showOverlay={showOverlay}
+        />
+        <Collection
+            name='tools'
+            images={toolsNodes.map(n => n.node)}
+            showOverlay={showOverlay}
+        />
+        <Collection
+            name='from nowhere with love'
+            images={fromNowhereNodes.map(n => n.node)}
+            showOverlay={showOverlay}
+        />
+        <Collection
+            name='turbulence'
+            images={turbulenceNodes.map(n => n.node)}
             showOverlay={showOverlay}
         />
     </div>
