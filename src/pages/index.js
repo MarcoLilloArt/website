@@ -1,20 +1,31 @@
 import React from 'react'
 import ScrollableAnchor from 'react-scrollable-anchor'
+import { translate } from 'react-i18next'
+import { Flex, Box } from 'reflexbox'
 
 import CollectionsWithOverlay from '../components/collections/with-overlay'
 import style from './index.module.css'
 import MarcoLogo from '../components/marco-logo';
 import Exhibition from '../components/exhibition'
+import { contentBreakdown, marginBreakdown } from '../utils/layout'
 
-const IndexPage = ({ data }) =>
+const IndexPage = ({ data, t }) =>
   <div>
     <div className={style.imageContainer}>
       <div className={style.introContainer}>
         <MarcoLogo image={data.marcoLogo.edges[0].node} />
-        <p className={style.introText}>from nowhere with love</p>
+        <Box mt={[0, null, '2rem']} mb={[0, null, '6rem']}>
+          <p>from nowhere with love</p>
+        </Box>
       </div>
-      <div className={style.frontContainer}>
-        <div className={style.frontInnerContainer}>
+      <Flex className={style.frontContainer}>
+        <Box w={marginBreakdown} />
+        <Box
+          flex column justify='center'
+          w={contentBreakdown}
+          p={['1rem', null, '2rem']}
+          className={style.frontInnerContainer}
+        >
           <ScrollableAnchor id="collections">
             <div>
               <CollectionsWithOverlay
@@ -28,34 +39,36 @@ const IndexPage = ({ data }) =>
               />
             </div>
           </ScrollableAnchor>
-        </div>
-      </div>
+        </Box>
+        <Box w={marginBreakdown} />
+      </Flex>
     </div>
-    <div className={style.textContainer}>
-      <div className={style.textInnerContainer}>
+    <Flex className={style.textContainer}>
+      <Box w={marginBreakdown} />
+      <Box flex column justify='center' w={contentBreakdown} className={style.textInnerContainer}>
         <ScrollableAnchor id="history">
           <div className={style.contentGroup}>
-            <h3>history</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue nisi vitae suscipit tellus mauris a. Mi proin sed libero enim. Porttitor eget dolor morbi non arcu risus quis. Elit at imperdiet dui accumsan sit amet nulla facilisi. Mauris commodo quis imperdiet massa. Interdum posuere lorem ipsum dolor sit amet. Fermentum dui faucibus in ornare quam viverra orci sagittis eu. Elementum sagittis vitae et leo duis ut diam quam nulla. Elit ullamcorper dignissim cras tincidunt lobortis. Potenti nullam ac tortor vitae purus faucibus. Nec feugiat nisl pretium fusce id velit. Auctor augue mauris augue neque gravida. Sed felis eget velit aliquet. Augue lacus viverra vitae congue eu consequat. Pellentesque id nibh tortor id aliquet lectus proin. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Amet facilisis magna etiam tempor orci. Quam quisque id diam vel quam elementum pulvinar etiam. Consectetur libero id faucibus nisl tincidunt eget.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Congue nisi vitae suscipit tellus mauris a. Mi proin sed libero enim. Porttitor eget dolor morbi non arcu risus quis. Elit at imperdiet dui accumsan sit amet nulla facilisi. Mauris commodo quis imperdiet massa. Interdum posuere lorem ipsum dolor sit amet. Fermentum dui faucibus in ornare quam viverra orci sagittis eu. Elementum sagittis vitae et leo duis ut diam quam nulla. Elit ullamcorper dignissim cras tincidunt lobortis. Potenti nullam ac tortor vitae purus faucibus. Nec feugiat nisl pretium fusce id velit. Auctor augue mauris augue neque gravida. Sed felis eget velit aliquet. Augue lacus viverra vitae congue eu consequat. Pellentesque id nibh tortor id aliquet lectus proin. Est pellentesque elit ullamcorper dignissim cras tincidunt lobortis. Amet facilisis magna etiam tempor orci. Quam quisque id diam vel quam elementum pulvinar etiam. Consectetur libero id faucibus nisl tincidunt eget.</p>
+            <h3>{t('historyTitle')}</h3>
+            <div dangerouslySetInnerHTML={{ __html: t('historyText') }} />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="exhibition">
           <div className={style.contentGroup}>
-            <h3>exhibition</h3>
+            <h3>{t('exhibitionTitle')}</h3>
             <Exhibition />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="contact">
           <div className={style.contentGroup}>
-            <h3>contact</h3>
+            <h3>{t('contactTitle')}</h3>
             <p>
               <a href="tel:+375291234567" rel="nofollow">375-29-123-4567</a>
             </p>
           </div>
         </ScrollableAnchor>
-      </div>
-    </div>
+      </Box>
+      <Box w={marginBreakdown} />
+    </Flex>
   </div>
 
 export const query = graphql`
@@ -190,4 +203,4 @@ query TrianglesCollectionImages {
 }
 `
 
-export default IndexPage
+export default translate('main')(IndexPage)

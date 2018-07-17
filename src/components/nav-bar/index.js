@@ -1,17 +1,30 @@
 import React from 'react'
+import { Flex, Box } from 'reflexbox'
+import { translate } from 'react-i18next'
+
 import NavLink from './nav-link'
 import InstagramLink from './instagram-link'
+import { contentBreakdown, marginBreakdown } from '../../utils/layout'
 
 import style from './nav-bar.module.css'
 
-const NavBar = () => (
-  <div className={style.container}>
-    <NavLink to="#collections" title='collection' />
-    <NavLink to="#history" title='history' />
-    <NavLink to="#exhibition" title='exhibition' />
-    <NavLink to="#contact" title='contact' />
-    <InstagramLink className={style.instagram} />
-  </div>
-)
+const NavBar = ({ t, i18n }) => {
+  let anotherLang = i18n.language.indexOf('en') > -1 ? 'ru' : 'en'
+  
+  return (
+    <Flex className={style.container}>
+      <Box w={marginBreakdown} />
+      <Box w={contentBreakdown} flex wrap justify='flex-start'>
+        <NavLink to="#collections" children={t('collectionTitle')} />
+        <NavLink to="#history" children={t('historyTitle')} />
+        <NavLink to="#exhibition" children={t('exhibitionTitle')} />
+        <NavLink to="#contact" children={t('contactTitle')} />
+        <NavLink to="#" children={t('langSwitch')} onClick={() => i18n.changeLanguage(anotherLang)} />
+        <InstagramLink className={style.instagram} />
+      </Box>
+      <Box w={marginBreakdown} />
+    </Flex>
+  )
+}
 
-export default NavBar
+export default translate('main')(NavBar)
