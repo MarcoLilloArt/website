@@ -2,6 +2,7 @@ import React from 'react'
 import ScrollableAnchor from 'react-scrollable-anchor'
 import { translate } from 'react-i18next'
 import { Flex, Box } from 'reflexbox'
+import Image from 'gatsby-image'
 
 import CollectionsWithOverlay from '../components/collections/with-overlay'
 import style from './index.module.css'
@@ -49,7 +50,17 @@ const IndexPage = ({ data, t }) =>
         <ScrollableAnchor id="history">
           <div className={style.contentGroup}>
             <h3>{t('historyTitle')}</h3>
-            <div dangerouslySetInnerHTML={{ __html: t('historyText') }} />
+            <Flex wrap='wrap-reverse'>
+              <Box w={['100%', null, '60%']} justify='center' align='center'>
+                <div dangerouslySetInnerHTML={{ __html: t('historyText') }} />
+              </Box>
+              <Box w={['100%', null, '40%']} pl={[null, null, '4rem']} pt={['4rem', 0, 0]}>
+                <Image className={style.marcoPic} sizes={data.marcoPic.edges[0].node.sizes} />
+              </Box>
+            </Flex>
+            <br/>
+            <br/>
+            <div dangerouslySetInnerHTML={{ __html: t('biographyText') }} />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="exhibition">
@@ -62,7 +73,7 @@ const IndexPage = ({ data, t }) =>
           <div className={style.contentGroup}>
             <h3>{t('contactTitle')}</h3>
             <p>
-              <a href="tel:+375291234567" rel="nofollow">375-29-123-4567</a>
+              <a className={style.phoneNumber} href="tel:+375299439932" rel="nofollow">+375 (29) 943-99-32‬</a>
             </p>
           </div>
         </ScrollableAnchor>
@@ -73,10 +84,10 @@ const IndexPage = ({ data, t }) =>
 
 export const query = graphql`
 query TrianglesCollectionImages {
-  marcoLogo: allImageSharp(
+  marcoPic: allImageSharp(
     filter: {
       id: {
-        eq: "src/static/marco.png absPath of file >> ImageSharp"
+        eq: "src/static/marco.jpg absPath of file >> ImageSharp"
       }
     }
   ) {
@@ -84,6 +95,28 @@ query TrianglesCollectionImages {
       node {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
+        }
+        original {
+          src
+        }
+      }
+    }
+  }
+
+  marcoLogo: allImageSharp(
+    filter: {
+      id: {
+        eq: "src/static/marco-logo.png absPath of file >> ImageSharp"
+      }
+    }
+  ) {
+    edges {
+      node {
+        sizes(maxWidth: 1240 ) {
+          ...GatsbyImageSharpSizes
+        }
+        original {
+          src
         }
       }
     }
@@ -101,6 +134,9 @@ query TrianglesCollectionImages {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
         }
+        original {
+          src
+        }
       }
     }
   }
@@ -116,6 +152,9 @@ query TrianglesCollectionImages {
       node {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
+        }
+        original {
+          src
         }
       }
     }
@@ -133,6 +172,9 @@ query TrianglesCollectionImages {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
         }
+        original {
+          src
+        }
       }
     }
   }
@@ -148,6 +190,9 @@ query TrianglesCollectionImages {
       node {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
+        }
+        original {
+          src
         }
       }
     }
@@ -165,6 +210,9 @@ query TrianglesCollectionImages {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
         }
+        original {
+          src
+        }
       }
     }
   }
@@ -181,6 +229,9 @@ query TrianglesCollectionImages {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
         }
+        original {
+          src
+        }
       }
     }
   }
@@ -196,6 +247,9 @@ query TrianglesCollectionImages {
       node {
         sizes(maxWidth: 1240 ) {
           ...GatsbyImageSharpSizes
+        }
+        original {
+          src
         }
       }
     }

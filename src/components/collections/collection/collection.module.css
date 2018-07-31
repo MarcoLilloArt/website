@@ -49,11 +49,6 @@
     cursor: pointer;
 }
 
-.bigImageContainer {
-    display: flex;
-    align-items: center;
-}
-
-.bigImage {
-    width: 50vw;
+.bigSlider {
+    width: 100%;
 }

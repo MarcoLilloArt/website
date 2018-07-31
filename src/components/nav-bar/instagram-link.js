@@ -5,7 +5,7 @@ import style from './instagram-link.module.css'
 
 const InstagramLink = ({ className }) =>
     <div className={`${className} ${style.logo}`}>
-        <OutboundLink href="http://instagram.com">
+        <OutboundLink href="https://www.instagram.com/marcolillo.art/">
             <img className={style.image} src={require('../../static/insta-logo.png')} />
         </OutboundLink>
     </div>

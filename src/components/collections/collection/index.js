@@ -8,10 +8,20 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import style from './collection.module.css'
 
-const BigImage = ({ image }) =>
-    <div className={style.bigImageContainer}>
-        <Image className={style.bigImage} sizes={image.sizes} />
-    </div>
+const BigImage = ({ images, slideIndex }) =>
+    <Box flex align='center' w={['50vh', null, '50vw']}>
+        <Slider
+            arrows={false}
+            slidesToShow={1}
+            slidesToScroll={1}
+            initialSlide={slideIndex}
+            className={style.bigSlider}
+        >
+            {
+                images.map(image => <Image sizes={image.sizes} />)
+            }
+        </Slider>
+    </Box>
 
 const imageBreakdown = ['38vw', '25vw', '17vw']
 
@@ -34,7 +44,6 @@ const Collection = ({ name, images, showOverlay }) => {
         <div className={style.container}>
             <div className={style.title} children={name} />
             <Slider
-                adaptiveHeight
                 slidesToShow={slidesToShow}
                 slidesToScroll={slidesToShow}
                 className={style.carousel}
@@ -44,6 +53,7 @@ const Collection = ({ name, images, showOverlay }) => {
                         settings: {
                             slidesToShow: slidesToShow600,
                             slidesToScroll: slidesToShow600,
+                            arrows: false,
                         }
                     },
                     {
@@ -51,6 +61,7 @@ const Collection = ({ name, images, showOverlay }) => {
                         settings: {
                             slidesToShow: slidesToShow400,
                             slidesToScroll: slidesToShow400,
+                            arrows: false,
                         }
                     },
                 ]}
@@ -64,7 +75,7 @@ const Collection = ({ name, images, showOverlay }) => {
                             <Box
                                 w={imageBreakdown}
                                 className={style.imageOverlay}
-                                onClick={() => showOverlay(BigImage, { image })}
+                                onClick={() => showOverlay(BigImage, { image, images, slideIndex: index })}
                             />
                         </div>
                     )
