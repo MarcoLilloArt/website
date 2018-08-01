@@ -11,7 +11,6 @@ import style from './collection.module.css'
 const BigImage = ({ images, slideIndex }) =>
     <Box flex align='center' w={['50vh', null, '50vw']}>
         <Slider
-            arrows={false}
             slidesToShow={1}
             slidesToScroll={1}
             initialSlide={slideIndex}

@@ -10,23 +10,23 @@
     margin-top: 1rem;
 }
 
-.carousel:global.slick-slider > button.slick-arrow.slick-prev {
+:global .slick-slider > button.slick-arrow.slick-prev {
     left: -5rem !important;
     width: 30px;
     height: 30px;
 }
 
-.carousel:global.slick-slider button.slick-arrow.slick-prev::before {
+:global .slick-slider button.slick-arrow.slick-prev::before {
     font-size: 30px;
 }
 
-.carousel:global.slick-slider button.slick-arrow.slick-next {
+:global .slick-slider button.slick-arrow.slick-next {
     right: -5rem !important;
     width: 30px;
     height: 30px;
 }
 
-.carousel:global.slick-slider button.slick-arrow.slick-next::before {
+:global .slick-slider button.slick-arrow.slick-next::before {
     font-size: 30px;
 }
 

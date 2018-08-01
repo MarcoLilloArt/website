@@ -23,7 +23,11 @@ class OverlayProvider extends React.Component {
             component,
             props,
         })
-    hideOverlay = () => this.setState({ hidden: true })
+    hideOverlay = (e) => {
+        if (!e.defaultPrevented) {
+            this.setState({ hidden: true })
+        }
+    }
 
     render() {
         return (
