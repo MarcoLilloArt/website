@@ -36,15 +36,14 @@ class OverlayProvider extends React.Component {
                     {...this.props}
                     showOverlay={this.showOverlay}
                 />
-                <div
-                    style={{ display: this.state.hidden ? 'none' : 'block' }}
-                    className={style.overlay}
-                    onClick={this.hideOverlay}
-                >
-                    <div className={style.inner}>
-                        <this.state.component {...this.state.props} />
-                    </div>
-                </div>
+                {
+                    !this.state.hidden &&
+                        <div className={style.overlay} onClick={this.hideOverlay}>
+                            <div className={style.inner}>
+                                <this.state.component {...this.state.props} />
+                            </div>
+                        </div>
+                }
             </div>
         )
     }
