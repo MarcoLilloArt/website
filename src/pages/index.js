@@ -60,7 +60,10 @@ const IndexPage = ({ data, t }) =>
             </Flex>
             <br/>
             <br/>
-            <div dangerouslySetInnerHTML={{ __html: t('biographyText') }} />
+            <div
+              className={style.biographyText}
+              dangerouslySetInnerHTML={{ __html: t('biographyText') }}
+            />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="exhibition">

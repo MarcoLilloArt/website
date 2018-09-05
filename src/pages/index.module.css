@@ -40,3 +40,7 @@
 .phoneNumber {
     color: #902b23;
 }
+
+.biographyText {
+    font-weight: bold;
+}
