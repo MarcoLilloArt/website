@@ -10,18 +10,18 @@ const MemoriesPage = ({ data, i18n }) =>
         <Box w={contentBreakdown}>
             {
                 data.memories.edges
-                    // .filter(({ node }) => {
-                    //     let activeLang = i18n.language
-                    //     let localeToUse = ''
+                    .filter(({ node }) => {
+                        let activeLang = i18n.language
+                        let localeToUse = ''
 
-                    //     if (activeLang === 'ru') {
-                    //         localeToUse = activeLang
-                    //     } else {
-                    //         localeToUse = 'en-US'
-                    //     }
+                        if (activeLang === 'ru') {
+                            localeToUse = activeLang
+                        } else {
+                            localeToUse = 'en-US'
+                        }
 
-                    //     return node.node_locale === localeToUse
-                    // })
+                        return node.node_locale === localeToUse
+                    })
                     .map(({ node }) =>
                         <Box mb='10rem'>
                             <h1>{node.title}</h1>
