@@ -8,13 +8,21 @@
       "path----6a8c2be1a45e81b6b72f.js",
       "path----6a8c2be1a45e81b6b72f.js.map"
     ],
+    "path---memories": [
+      "path---memories-d9004a8fb023a4ed0211.js",
+      "path---memories-d9004a8fb023a4ed0211.js.map"
+    ],
+    "component---src-pages-memories-js": [
+      "component---src-pages-memories-js-30a207a4d56ccb325f91.js",
+      "component---src-pages-memories-js-30a207a4d56ccb325f91.js.map"
+    ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-eba8eb2b93a086610f93.js",
-      "component---src-layouts-index-js-eba8eb2b93a086610f93.js.map"
+      "component---src-layouts-index-js-4fc832a4c6a036b1a668.js",
+      "component---src-layouts-index-js-4fc832a4c6a036b1a668.js.map"
     ],
     "path---index": [
-      "path---index-d1057424e8861fab4cc0.js",
-      "path---index-d1057424e8861fab4cc0.js.map"
+      "path---index-beab108dca6b345f6838.js",
+      "path---index-beab108dca6b345f6838.js.map"
     ],
     "commons": [
       "commons-871b16cb677ca6a58ffb.js",
@@ -23,9 +31,9 @@
       "build-js-styles.css.map"
     ],
     "app": [
-      "app-e0dd7c69a1553c5ec3ed.js",
+      "app-6cbc012a73d3a321b0b3.js",
       "build-js-styles.css",
-      "app-e0dd7c69a1553c5ec3ed.js.map",
+      "app-6cbc012a73d3a321b0b3.js.map",
       "build-js-styles.css.map"
     ]
   }

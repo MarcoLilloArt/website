@@ -15,10 +15,11 @@ const NavBar = ({ t, i18n }) => {
     <Flex className={style.container}>
       <Box w={marginBreakdown} />
       <Box w={contentBreakdown} flex wrap justify='flex-start'>
-        <NavLink to="#collections" children={t('collectionTitle')} />
-        <NavLink to="#history" children={t('historyTitle')} />
-        <NavLink to="#exhibition" children={t('exhibitionTitle')} />
-        <NavLink to="#contact" children={t('contactTitle')} />
+        <NavLink to="/#collections" children={t('collectionTitle')} />
+        <NavLink to="/#history" children={t('historyTitle')} />
+        <NavLink to="/#exhibition" children={t('exhibitionTitle')} />
+        <NavLink to="/#contact" children={t('contactTitle')} />
+        <NavLink to="/memories" children={t('memoriesTitle')} />
         <NavLink to="#" children={t('langSwitch')} onClick={() => i18n.changeLanguage(anotherLang)} />
         <InstagramLink className={style.instagram} />
       </Box>

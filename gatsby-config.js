@@ -12,6 +12,7 @@ module.exports = {
     },
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
+    'gatsby-transformer-remark',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -25,6 +26,13 @@ module.exports = {
         name: 'img',
         path: 'src/static/'
       }
+    },
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: 'ivce7aspb2u9',
+        accessToken: 'bd5a728bc9b5705c81ebf658a9d14c28f51f16bccced5c665a08c93cfbd4704d',
+      },
     },
   ],
 }
