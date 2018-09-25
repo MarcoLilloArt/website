@@ -3,6 +3,7 @@ import React from 'react'
 import { Flex, Box } from 'reflexbox'
 
 import { contentBreakdown, marginBreakdown } from '../utils/layout'
+import { edgesFilterLocale } from '../utils/i18n';
 
 const MemoriesPage = ({ data, i18n }) =>
     <Flex py={4} px={3}>
@@ -10,18 +11,7 @@ const MemoriesPage = ({ data, i18n }) =>
         <Box w={contentBreakdown}>
             {
                 data.memories.edges
-                    .filter(({ node }) => {
-                        let activeLang = i18n.language
-                        let localeToUse = ''
-
-                        if (activeLang === 'ru') {
-                            localeToUse = activeLang
-                        } else {
-                            localeToUse = 'en-US'
-                        }
-
-                        return node.node_locale === localeToUse
-                    })
+                    .filter(edgesFilterLocale(i18n))
                     .map(({ node }) =>
                         <Box mb='10rem'>
                             <h1>{node.title}</h1>

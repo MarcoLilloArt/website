@@ -28,17 +28,7 @@ const IndexPage = ({ data, t }) =>
           className={style.frontInnerContainer}
         >
           <ScrollableAnchor id="collections">
-            <div>
-              <CollectionsWithOverlay
-                triangleNodes={data.triangles.edges}
-                dreamNodes={data.dreamWithinADream.edges}
-                bitsNodes={data.bitsAndPieces.edges}
-                otherNodes={data.other.edges}
-                toolsNodes={data.tools.edges}
-                turbulenceNodes={data.turbulence.edges}
-                fromNowhereNodes={data.fromNowhereWithLove.edges}
-              />
-            </div>
+            <CollectionsWithOverlay data={data.collections.edges} />
           </ScrollableAnchor>
         </Box>
         <Box w={marginBreakdown} />
@@ -119,135 +109,16 @@ query TrianglesCollectionImages {
     }
   }
 
-  triangles: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/triangles/"
-      }
-    }
-  ) {
+  collections: allContentfulCollection {
     edges {
       node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
+        name
+        images {
+          sizes(maxWidth: 800) {
+            ...GatsbyContentfulSizes
+          }
         }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  dreamWithinADream: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/dream-within-a-dream/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  bitsAndPieces: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/bits-and-pieces/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  fromNowhereWithLove: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/from-nowhere-with-love/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  other: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/other/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  tools: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/tools/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
-      }
-    }
-  }
-
-  turbulence: allImageSharp(
-    filter: {
-      id: {
-        regex: "/collections\/turbulence/"
-      }
-    }
-  ) {
-    edges {
-      node {
-        sizes(maxWidth: 1240 ) {
-          ...GatsbyImageSharpSizes
-        }
-        original {
-          src
-        }
+        node_locale
       }
     }
   }
