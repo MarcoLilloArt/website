@@ -50,20 +50,14 @@ const IndexPage = ({ data, t }) =>
         <ScrollableAnchor id="history">
           <div className={style.contentGroup}>
             <h3>{t('historyTitle')}</h3>
-            <Flex wrap='wrap-reverse'>
-              <Box w={['100%', null, '60%']} justify='center' align='center'>
-                <div dangerouslySetInnerHTML={{ __html: t('historyText') }} />
-              </Box>
-              <Box w={['100%', null, '40%']} pl={[null, null, '4rem']} pt={['4rem', 0, 0]}>
-                <Image className={style.marcoPic} sizes={data.marcoPic.edges[0].node.sizes} />
-              </Box>
-            </Flex>
+            <Box w={['100%', '40%', '25%']} className={style.marcoPic}>
+              <Image sizes={data.marcoPic.edges[0].node.sizes} />
+            </Box>
+            <span dangerouslySetInnerHTML={{ __html: t('historyText') }} />
             <br/>
             <br/>
-            <div
-              className={style.biographyText}
-              dangerouslySetInnerHTML={{ __html: t('biographyText') }}
-            />
+            <h3>{t('biographyTitle')}</h3>
+            <span dangerouslySetInnerHTML={{ __html: t('biographyText') }} />
           </div>
         </ScrollableAnchor>
         <ScrollableAnchor id="exhibition">

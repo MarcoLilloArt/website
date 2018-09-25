@@ -41,6 +41,8 @@
     color: #902b23;
 }
 
-.biographyText {
-    font-weight: bold;
+.marcoPic {
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
 }
