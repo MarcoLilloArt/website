@@ -5,12 +5,16 @@ import style from './exhibition.module.css'
 import LocationMap from './map'
 
 const Exhibition = ({ t }) =>
-    <div className={style.container}>
+    <div>
+        <div className={style.map}>
+            <LocationMap />
+        </div>
+        <br/>
+        <br/>
         <address>
             {t('venueName')} <br/>
             {t('venueAddress')}
         </address>
-        <LocationMap />
     </div>
 
 export default translate('main')(Exhibition)
