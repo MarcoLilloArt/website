@@ -62,6 +62,9 @@ const IndexPage = ({ data, t }) =>
             <p>
               <a className={style.phoneNumber} href="tel:+375299439932" rel="nofollow">+375 (29) 943-99-32‬</a>
             </p>
+            <p>
+              <a className={style.phoneNumber} href="mailto:marcolilloart@gmail.com" rel="nofollow">marcolilloart@gmail.com‬</a>
+            </p>
           </div>
         </ScrollableAnchor>
       </Box>

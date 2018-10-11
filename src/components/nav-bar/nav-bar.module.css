@@ -5,3 +5,15 @@
 .instagram {
     margin-left: auto;
 }
+
+.languageIcon {
+    max-width: 1.5rem;
+    margin-bottom: 0;
+    margin-right: .7rem;
+}
+
+.languageLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

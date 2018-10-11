@@ -1,3 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.submenuContainer {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
 .link {
     text-decoration: none;
     padding: 1rem 2rem;

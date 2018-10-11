@@ -8,9 +8,14 @@ import { contentBreakdown, marginBreakdown } from '../../utils/layout'
 
 import style from './nav-bar.module.css'
 
+const supportedLanguages = {
+  'ru': 'русский',
+  'en': 'english',
+  'fr': 'français',
+  'es': 'español',
+}
+
 const NavBar = ({ t, i18n }) => {
-  let anotherLang = i18n.language.indexOf('en') > -1 ? 'ru' : 'en'
-  
   return (
     <Flex className={style.container}>
       <Box w={marginBreakdown} />
@@ -20,7 +25,22 @@ const NavBar = ({ t, i18n }) => {
         <NavLink to="/#exhibition" children={t('exhibitionTitle')} />
         <NavLink to="/#contact" children={t('contactTitle')} />
         <NavLink to="/memories" children={t('memoriesTitle')} />
-        <NavLink to="#" children={t('langSwitch')} onClick={() => i18n.changeLanguage(anotherLang)} />
+        <NavLink to="#"
+          children={
+            <span className={style.languageLink}>
+              <img className={style.languageIcon} src={require('../../static/language.png')} /> {t('langSwitch')}
+            </span>
+          }
+          onClick={lang => i18n.changeLanguage(lang)}
+          submenu={
+            Object.keys(supportedLanguages).reduce((allOtherLanguages, lang) => {
+              if (lang !== i18n.language) {
+                allOtherLanguages[lang] = supportedLanguages[lang]
+              }
+              return allOtherLanguages
+            }, {})
+          }
+        />
         <InstagramLink className={style.instagram} />
       </Box>
       <Box w={marginBreakdown} />
