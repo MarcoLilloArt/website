@@ -14,7 +14,7 @@ const Exhibition = ({ t }) =>
 //      </address> 
 
    <div>
-         <span dangerouslySetInnerHTML={{ __html: t('hibitionsList') }} />
+         <span dangerouslySetInnerHTML={{ __html: t('exhibitionsList') }} />
         <br/>
         <br/>
         <div className={style.video}>
