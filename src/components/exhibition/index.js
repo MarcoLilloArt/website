@@ -2,19 +2,26 @@ import React from 'react'
 import { translate } from 'react-i18next'
 
 import style from './exhibition.module.css'
-import LocationMap from './map'
+import LocationVideo from './video'
 
 const Exhibition = ({ t }) =>
-    <div>
-        <div className={style.map}>
-            <LocationMap />
+
+// Venue Name and Address backup, change to Exhibitions List instead
+//  <div>
+//       <address>
+//           {t('venueName')} <br/>
+//           {t('venueAddress')}
+//      </address> 
+
+   <div>
+       <address>
+            {t('exhibitionsList')}
+        </address> 
+        <br/>
+        <br/>
+        <div className={style.video}>
+            <LocationVideo />
         </div>
-        <br/>
-        <br/>
-        <address>
-            {t('venueName')} <br/>
-            {t('venueAddress')}
-        </address>
     </div>
 
 export default translate('main')(Exhibition)
