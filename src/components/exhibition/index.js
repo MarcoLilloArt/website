@@ -14,9 +14,7 @@ const Exhibition = ({ t }) =>
 //      </address> 
 
    <div>
-       <address>
-            {t('exhibitionsList')}
-        </address> 
+         {t('exhibitionsList')}
         <br/>
         <br/>
         <div className={style.video}>
